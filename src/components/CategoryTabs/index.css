@@ -1,0 +1,30 @@
+.tabs-container {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scroll */
+  white-space: nowrap; /* Prevents wrapping to new line */
+
+  padding: 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.tab {
+  flex: 0 0 auto; /* Prevent shrinking */
+  padding: 8px 16px;
+  border: none;
+  background: #ffffff;
+
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: white;
+  color: red;
+  font-weight: bold;
+  border-bottom: 1px solid red;
+}

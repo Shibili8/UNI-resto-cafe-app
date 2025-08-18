@@ -1,0 +1,17 @@
+.dish-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 100vw;
+}
+@media (min-width: 640px) {
+  .dish-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .dish-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

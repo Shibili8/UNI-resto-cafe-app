@@ -1,0 +1,135 @@
+.dish-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: 0.3s;
+  display: flex;
+  width: 100%;
+}
+.dish-card:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.non-veg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #4a1b27;
+  padding: 5px;
+  margin: 15px 10px 0px 0px;
+}
+.veg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #014a23;
+  padding: 5px;
+  margin: 15px 10px 0px 0px;
+}
+.non-veg-circle {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #4a1b27;
+}
+.veg-circle {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #014a23;
+}
+.dish-specifications {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 80%;
+}
+.calories-container {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calory {
+  color: #fc8a08;
+  font-size: 20px;
+  font-weight: 400;
+}
+.img-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dish-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.dish-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+.dish-price {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.dish-desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+}
+.customizations {
+  font-size: 12px;
+  color: #1313f0;
+  margin-bottom: 10px;
+}
+.dish-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #1d701a;
+  border-radius: 12px;
+  width: 90px;
+  justify-content: center;
+}
+.btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+.btn:hover {
+  background: #ddd;
+}
+.btn.add {
+  background: transparent;
+  color: white;
+}
+.count {
+  font-size: 14px;
+  color: white;
+}
+
+@media screen and (max-width: 640px) {
+  .dish-img {
+    width: 80px;
+    height: 80px;
+    align-self: flex-start;
+  }
+  .calory {
+    font-size: 13px;
+  }
+}
