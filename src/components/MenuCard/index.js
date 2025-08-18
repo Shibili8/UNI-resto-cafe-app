@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import CategoryTabs from '../CategoryTabs'
 import DishCard from '../DishCard'
 import Header from '../Header'
@@ -30,9 +30,6 @@ export default function MenuCard() {
   }, [])
 
   const handleAddToCart = dishId => {
-    {
-      console.log('reached')
-    }
     setCart(prev => ({
       ...prev,
       [dishId]: (prev[dishId] || 0) + 1,

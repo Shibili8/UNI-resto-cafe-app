@@ -1,4 +1,3 @@
-import React from 'react'
 import './index.css'
 
 export default function DishCard({dish, count, onAdd, onRemove}) {
@@ -17,11 +16,19 @@ export default function DishCard({dish, count, onAdd, onRemove}) {
         <p className="dish-desc">{dish.dish_description}</p>
 
         <div className="dish-actions">
-          <button onClick={() => onRemove(dish.dish_id)} className="btn">
+          <button
+            type="button"
+            onClick={() => onRemove(dish.dish_id)}
+            className="btn"
+          >
             -
           </button>
           <span className="count">{count}</span>
-          <button onClick={() => onAdd(dish.dish_id)} className="btn add">
+          <button
+            type="button"
+            onClick={() => onAdd(dish.dish_id)}
+            className="btn add"
+          >
             +
           </button>
         </div>

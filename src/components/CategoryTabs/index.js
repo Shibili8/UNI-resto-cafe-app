@@ -1,4 +1,3 @@
-import React from 'react'
 import './index.css'
 
 export default function CategoryTabs({
@@ -10,6 +9,7 @@ export default function CategoryTabs({
     <div className="tabs-container">
       {categories.map(cat => (
         <button
+          type="button"
           key={cat.menu_category_id}
           className={`tab ${
             activeCategory === cat.menu_category_id ? 'active' : ''
