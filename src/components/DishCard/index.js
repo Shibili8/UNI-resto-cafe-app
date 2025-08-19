@@ -14,35 +14,33 @@ export default function DishCard({dish, count, onAdd, onRemove}) {
           {dish.dish_currency} {dish.dish_price}
         </p>
         <p className="dish-desc">{dish.dish_description}</p>
-        {dish.dish_Availability?(
-            <>
+        {dish.dish_Availability ? (
+          <>
             <div className="dish-actions">
-                <button
-                    type="button"
-                    onClick={() => onRemove(dish.dish_id)}
-                    className="btn"
-                >
-                    -
-                </button>
-                <span className="count">{count}</span>
-                <button
-                    type="button"
-                    onClick={() => onAdd(dish.dish_id)}
-                    className="btn add"
-                >
-                    +
-                </button>
+              <button
+                type="button"
+                onClick={() => onRemove(dish.dish_id)}
+                className="btn"
+              >
+                -
+              </button>
+              <span className="count">{count}</span>
+              <button
+                type="button"
+                onClick={() => onAdd(dish.dish_id)}
+                className="btn add"
+              >
+                +
+              </button>
             </div>
             {count > 0 && (
-            <p className="customizations">Customizations available</p>
+              <p className="customizations">Customizations available</p>
             )}
-            </>
-      
-        ):(
-            <p className="not-available">Not available</p>
-        )
-        }
-        </div>
+          </>
+        ) : (
+          <p className="not-available">Not available</p>
+        )}
+      </div>
       <div className="calories-container">
         <p className="calory">{dish.dish_calories} calories</p>
       </div>
