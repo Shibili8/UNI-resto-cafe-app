@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import Loader from 'react-loader-spinner'
 import CategoryTabs from '../CategoryTabs'
 import DishCard from '../DishCard'
 import Header from '../Header'
@@ -45,7 +46,13 @@ export default function MenuCard() {
     })
   }
 
-  if (!data) return <p className="loading">Loading...</p>
+  if (!data) {
+    return (
+      <div className="loader-container">
+        <Loader type="Circles" color="#4fa94d" height={80} width={80} />
+      </div>
+    )
+  }
 
   const activeDishes =
     data.table_menu_list.find(cat => cat.menu_category_id === activeCategory)
