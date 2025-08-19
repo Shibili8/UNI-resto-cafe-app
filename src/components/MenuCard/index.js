@@ -48,8 +48,8 @@ export default function MenuCard() {
 
   if (!data) {
     return (
-      <div className="loader-container">
-        <Loader type="Circles" color="#4fa94d" height={80} width={80} />
+      <div className='loader-container'>
+        <Loader type='Circles' color='#4fa94d' height={80} width={80} />
       </div>
     )
   }
@@ -69,7 +69,7 @@ export default function MenuCard() {
         setActiveCategory={setActiveCategory}
       />
 
-      <div className="dish-grid">
+      <div className='dish-grid'>
         {activeDishes.map(dish => (
           <DishCard
             key={dish.dish_id}
