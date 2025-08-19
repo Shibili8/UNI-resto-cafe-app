@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "engines": {
-    "node": "22.x",
+    "node": "18.x",
     "npm": "10.x"
   },
   "packageManager": "npm@10.8.2",
@@ -12,8 +12,8 @@
     "@testing-library/react": "11.2.5",
     "@testing-library/user-event": "12.6.2",
     "chalk": "4.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "4.2.0",
     "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.3.0",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.28.0",
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@babel/preset-react": "7.27.1",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
@@ -36,7 +37,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint .",
     "lint:fix": "eslint --fix src/",
