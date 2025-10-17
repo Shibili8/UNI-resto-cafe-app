@@ -1,14 +1,17 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import Loader from 'react-loader-spinner'
 import CategoryTabs from '../CategoryTabs'
 import DishCard from '../DishCard'
 import Header from '../Header'
+import CartContext from '../../context/CartContext'
 import './index.css'
 
-export default function MenuCard() {
+export default function Home() {
   const [data, setData] = useState(null)
   const [activeCategory, setActiveCategory] = useState(null)
-  const [cart, setCart] = useState({})
+  const {cartList, addCartItem, incrementCartItemQuantity} = useContext(
+    CartContext,
+  )
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,22 +33,6 @@ export default function MenuCard() {
     fetchData()
   }, [])
 
-  const handleAddToCart = dishId => {
-    setCart(prev => ({
-      ...prev,
-      [dishId]: (prev[dishId] || 0) + 1,
-    }))
-  }
-
-  const handleRemoveFromCart = dishId => {
-    setCart(prev => {
-      if (!prev[dishId]) return prev
-      const updated = {...prev, [dishId]: prev[dishId] - 1}
-      if (updated[dishId] <= 0) delete updated[dishId]
-      return updated
-    })
-  }
-
   if (!data) {
     return (
       <div className="loader-container">
@@ -60,25 +47,19 @@ export default function MenuCard() {
 
   return (
     <div>
-      {console.log(data)}
-      <Header cartCount={Object.values(cart).reduce((a, b) => a + b, 0)} />
+      <Header restoName={data.branch_name} />
+      <div className="home-container">
+        <CategoryTabs
+          categories={data.table_menu_list}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
 
-      <CategoryTabs
-        categories={data.table_menu_list}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-      />
-
-      <div className="dish-grid">
-        {activeDishes.map(dish => (
-          <DishCard
-            key={dish.dish_id}
-            dish={dish}
-            count={cart[dish.dish_id] || 0}
-            onAdd={() => handleAddToCart(dish.dish_id)}
-            onRemove={() => handleRemoveFromCart(dish.dish_id)}
-          />
-        ))}
+        <div className="dish-grid">
+          {activeDishes.map(dish => (
+            <DishCard key={dish.dish_id} dish={dish} />
+          ))}
+        </div>
       </div>
     </div>
   )
